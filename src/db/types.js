@@ -6,4 +6,7 @@ module.exports = {
   TEXT: Sequelize.TEXT,
   INTEGER: Sequelize.INTEGER,
   BOOLEAN: Sequelize.BOOLEAN,
+  JSON: Sequelize.JSON,
+  DATE: Sequelize.DATE,
+  TIME: Sequelize.TIME,
 };

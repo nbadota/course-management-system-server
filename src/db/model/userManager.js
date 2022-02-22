@@ -6,6 +6,7 @@ const userManager = seq.define('userManager', {
   phoneNumber: {
     type: STRING,
     allowNull: false,
+    unique: true,
   },
   gender: {
     type: INTEGER,

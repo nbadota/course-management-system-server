@@ -1,16 +1,19 @@
 const seq = require('./seq');
-require('./model/userManager');
+// const court = require('./model/court');
+require('./model/index');
 
 
 seq.authenticate().then(() => {
   console.log('auth ok');
-}).catch(() => {
-  console.log('auth err');
+}).catch((err) => {
+  console.log('auth err-------', err);
 });
+
 
 seq.sync({alter: true}).then(() => {
   console.log('sync success');
   process.exit();
 }).catch((err) => {
-  console.log(err);
+  console.log('sync err-------', err);
 });
+

@@ -12,6 +12,8 @@
     },
     "rules": {
         "require-jsdoc": "off",
-        "no-var": "off"
+        "no-var": "off",
+        "max-len": "off",
+        "no-trailing-spaces": "off"
     }
 }
