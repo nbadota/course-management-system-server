@@ -1,5 +1,4 @@
 const seq = require('./seq');
-// const court = require('./model/court');
 require('./model/index');
 
 
