@@ -28,4 +28,20 @@ module.exports = {
     errno: 10007,
     message: '验证码发送失败',
   },
+  payFailInfo: {
+    errno: 10008,
+    message: '支付失败',
+  },
+  reservationFailInfo: {
+    errno: 10009,
+    message: '预约失败，时长超过单日限额',
+  },
+  reservationConflictInfo: {
+    errno: 10010,
+    message: '预约失败，所选场次存在已被其他用户预约，请刷新重试',
+  },
+  insufficientRemainingTime: {
+    errno: 10011,
+    message: '预约失败，会员卡剩余时长不足',
+  },
 };

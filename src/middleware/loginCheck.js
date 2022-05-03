@@ -8,10 +8,10 @@ async function loginCheck(ctx, next) {
     await next();
     return;
   }
-  const token = ctx.cookies.get('token');
+  const token = ctx.cookies.get('token') || ctx.request.headers.token;
   const user = await get(token);
   if (user) {
-    ctx.state.user = user;
+    ctx.state.user = user.manager || user;
     await next();
   } else {
     ctx.body = new ErrorModel(loginCheckFailInfo);

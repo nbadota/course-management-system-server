@@ -1,5 +1,5 @@
 const seq = require('../seq');
-const {STRING, INTEGER, TIME} = require('../types');
+const {STRING, TIME, BOOLEAN} = require('../types');
 
 const pitch = seq.define('pitch', {
   // 在这里定义模型属性
@@ -9,28 +9,32 @@ const pitch = seq.define('pitch', {
   },
   pitchType: {
     type: STRING,
-    allowNull: true,
+    allowNull: false,
   },
   openTime: {
     type: TIME,
-    allowNull: true,
+    allowNull: false,
   },
   closeTime: {
     type: TIME,
-    allowNull: true,
+    allowNull: false,
   },
   activated: {
-    type: INTEGER,
+    type: BOOLEAN,
     allowNull: false,
-    default: 1,
   },
   message: {
     type: STRING,
     allowNull: true,
   },
+  isDelete: {
+    type: BOOLEAN,
+    allowNull: false,
+    defaultValue: false,
+  },
 }, {
   // 这是其他模型参数
-  tableName: 'pitch',
+  tableName: 't_pitch',
 });
 
 

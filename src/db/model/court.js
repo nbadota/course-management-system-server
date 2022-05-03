@@ -5,11 +5,11 @@ const court = seq.define('court', {
   // 在这里定义模型属性
   name: {
     type: STRING,
-    allowNull: true,
+    allowNull: false,
   },
   location: {
     type: STRING,
-    allowNull: true,
+    allowNull: false,
   },
   openTime: {
     type: TIME,
@@ -25,7 +25,7 @@ const court = seq.define('court', {
   },
 }, {
   // 这是其他模型参数
-  tableName: 'court',
+  tableName: 't_court',
 });
 
 

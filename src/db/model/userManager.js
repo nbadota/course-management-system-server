@@ -8,17 +8,14 @@ const userManager = seq.define('userManager', {
     allowNull: false,
     unique: true,
   },
-  gender: {
-    type: INTEGER,
-    allowNull: false,
-  },
   activated: {
     type: INTEGER,
     allowNull: false,
+    defaultValue: 1,
   },
 }, {
   // 这是其他模型参数
-  tableName: 'user_manager',
+  tableName: 't_user_manager',
 });
 
 

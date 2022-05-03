@@ -16,7 +16,9 @@ async function set(key, val, timeout = 60 * 60) {
   if (val) {
     await redisClient.set(key, val);
   }
-  await redisClient.expire(key, timeout);
+  if (timeout) {
+    await redisClient.expire(key, timeout);
+  }
 }
 
 async function get(key) {
@@ -36,6 +38,7 @@ async function get(key) {
 }
 
 module.exports = {
+  redisClient,
   set,
   get,
 };

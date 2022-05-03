@@ -1,18 +1,33 @@
-const {userManager} = require('../db/model/index');
+const {userManager, staff} = require('../db/model/index');
 
 async function getUserInfo(phoneNumber) {
-  // 查询条件
-  const whereOpt = {
-    phoneNumber,
-  };
+  let user = null;
 
-  // 查询
-  const result = await userManager.findOne({
-    attributes: ['id', 'phoneNumber', 'gender', 'activated'],
-    where: whereOpt,
-  });
+  const manager = await userManager.findOne({
+    attributes: ['id', 'phoneNumber', 'activated'],
+    where: {
+      phoneNumber,
+      activated: 1,
+    },
+  }, {raw: true});
 
-  return result;
+  if (manager) {
+    user = manager;
+  } else {
+    const staf = await staff.findAll({
+      attributes: ['name', 'phone', 'courtId', 'roleId'],
+      where: {
+        phone: phoneNumber,
+        isDelete: false,
+      },
+    }, {raw: true});
+
+    if (staf.length) {
+      user = staf;
+    }
+  }
+
+  return user;
 }
 
 async function sendVeriCodeMsg(phoneNumber, code, timeout = '') {
