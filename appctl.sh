@@ -53,8 +53,8 @@ start_application() {
     node --version
     npm --version
     echo "starting nodejs process"
-    nohup npm model > ${STD_OUT} 2>&1 &
-    nohup npm start > ${STD_OUT} 2>&1 &
+    npm model > ${STD_OUT} 2>&1 &
+    npm prd > ${STD_OUT} 2>&1 &
     echo "started nodejs process"
 }
 
