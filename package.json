@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=dev nodemon node bin/www",
     "dev": "cross-env NODE_ENV=dev ./node_modules/.bin/nodemon --inspect=9229 bin/www",
-    "prd": "cross-env NODE_ENV=production pm2 restart ./pm2.conf.json",
+    "prd": "cross-env NODE_ENV=production node bin/www",
     "lint": "eslint --ext .js ./src",
     "test": "cross-env NODE_ENV=test jest --runInBand --forceExit --colors",
     "model": "node ./src/db/sync.js"
