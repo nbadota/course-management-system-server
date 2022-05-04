@@ -23,7 +23,7 @@ if (isProd) {
 
   MYSQL_CONF = {
     // 线上的 mysql 配置
-    host: '47.98.208.69',
+    host: 'localhost',
     user: 'dms',
     password: 'Li789789@',
     port: '3306',
