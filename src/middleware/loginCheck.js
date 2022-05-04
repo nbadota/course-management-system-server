@@ -1,4 +1,4 @@
-const {ErrorModel} = require('../model/ResModel');
+const {ErrorModel} = require('../model/resModel');
 const {loginCheckFailInfo} = require('../model/ErrorInfo');
 const {whiteList} = require('../conf/whiteList');
 const {get} = require('../cache/_redis');
