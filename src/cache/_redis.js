@@ -1,8 +1,8 @@
 const {createClient} = require('redis');
-// const {REDIS_CONF} = require('../conf/db');
+const {REDIS_CONF} = require('../conf/db');
 
 // 创建客户端
-const redisClient = createClient();
+const redisClient = createClient(REDIS_CONF);
 redisClient.on('error', (err) => {
   console.error('redis error', err);
 });
